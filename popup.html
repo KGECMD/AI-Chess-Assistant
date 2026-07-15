@@ -5,56 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Chess Assistant</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            width: 400px;
-            padding: 15px;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
+            width: 420px;
+            padding: 16px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         
         h1 {
             font-size: 18px;
-            margin: 0 0 15px 0;
-            color: #333;
+            margin-bottom: 16px;
+            color: white;
+            text-align: center;
         }
         
         .section {
             background: white;
-            padding: 12px;
+            padding: 14px;
             margin-bottom: 12px;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
         
         button {
             width: 100%;
-            padding: 10px;
-            margin: 8px 0;
+            padding: 11px;
+            margin: 6px 0;
             background: #4CAF50;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s;
         }
         
         button:hover {
             background: #45a049;
         }
         
+        button:active {
+            transform: scale(0.98);
+        }
+        
+        #autoplay-btn {
+            background: #2196F3;
+        }
+        
+        #autoplay-btn:hover {
+            background: #1976D2;
+        }
+        
+        #autoplay-btn.active {
+            background: #f44336;
+        }
+        
+        #autoplay-btn.active:hover {
+            background: #da190b;
+        }
+        
         .status {
-            padding: 10px;
-            background: #e8f5e9;
-            border-left: 4px solid #4CAF50;
-            border-radius: 4px;
+            padding: 11px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 6px;
             margin: 10px 0;
             font-size: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .status.active {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
         }
         
         .info {
             font-size: 12px;
             color: #666;
             margin: 10px 0;
+            line-height: 1.5;
+        }
+        
+        .toggle-section {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 12px 0;
+            border-left: 4px solid #2196F3;
+        }
+        
+        .toggle-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .toggle {
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+            background: #ccc;
+            border-radius: 13px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.3s;
+        }
+        
+        .toggle.on {
+            background: #4CAF50;
+        }
+        
+        .toggle::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            top: 1px;
+            left: 1px;
+            transition: left 0.3s;
+        }
+        
+        .toggle.on::after {
+            left: 25px;
         }
     </style>
 </head>
@@ -62,21 +146,31 @@
     <h1>♟️ AI Chess Assistant</h1>
     
     <div class="section">
-        <button id="analyze-btn">Analyze Position</button>
-        <button id="toggle-btn">Toggle Board Display</button>
+        <button id="analyze-btn">📊 Analyze Position</button>
+        <button id="autoplay-btn">▶️ Start Autoplay</button>
     </div>
     
     <div class="section">
         <div id="status" class="status">Ready to analyze</div>
         <div class="info">
-            💡 Open this popup while on chess.com to analyze positions
+            💡 Click buttons to analyze positions or enable autoplay on chess.com
+        </div>
+    </div>
+    
+    <div class="toggle-section">
+        <label class="toggle-label">Autoplay Status:</label>
+        <div id="status-indicator" style="font-size: 14px; font-weight: bold; color: #2196F3;">
+            ⏸️ OFF
         </div>
     </div>
     
     <div class="section">
         <div class="info">
-            <strong>Version:</strong> 4.0.0<br>
-            <strong>Status:</strong> Active
+            <strong>✨ Features:</strong><br>
+            • Real-time analysis<br>
+            • Automatic move play<br>
+            • Board detection<br>
+            • No dependencies
         </div>
     </div>
 
