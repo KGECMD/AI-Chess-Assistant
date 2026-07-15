@@ -1,11 +1,12 @@
 {
   "name": "ai-chess-assistant",
-  "version": "4.0.0",
-  "description": "Chrome extension integrating Stockfish chess engine for real-time position analysis, move evaluation, and intelligent suggestions. Built with TypeScript and modern architecture.",
+  "version": "4.0.1",
+  "description": "Chrome extension integrating LC0 chess engine for real-time position analysis, move evaluation, and intelligent suggestions. Built with TypeScript and modern architecture.",
   "type": "module",
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
+    "build:zip": "npm run build && cd dist && zip -r ../ai-chess-assistant-lc0.zip ./*",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "type-check": "tsc --noEmit",
@@ -14,13 +15,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nolancacheux/AI-Chess-Assistant.git"
+    "url": "https://github.com/KGECMD/AI-Chess-Assistant.git"
   },
-  "author": "Nolan Cacheux",
+  "author": "KGECMD",
   "license": "MIT",
   "keywords": [
     "chess",
-    "stockfish",
+    "lc0",
     "chrome-extension",
     "typescript",
     "ai",
@@ -30,9 +31,12 @@
     "real-time-analysis"
   ],
   "bugs": {
-    "url": "https://github.com/nolancacheux/AI-Chess-Assistant/issues"
+    "url": "https://github.com/KGECMD/AI-Chess-Assistant/issues"
   },
-  "homepage": "https://github.com/nolancacheux/AI-Chess-Assistant#readme",
+  "homepage": "https://github.com/KGECMD/AI-Chess-Assistant#readme",
+  "dependencies": {
+    "pako": "^2.1.0"
+  },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.25",
     "@types/chrome": "^0.0.268",
