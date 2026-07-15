@@ -36,6 +36,8 @@ export interface EngineConfig {
   multipvCount: number;
   /** Humanization options */
   humanization?: HumanizationOptions;
+  /** Whether to compress engine messages (lossless deflate) */
+  compressionEnabled?: boolean;
 }
 
 /** Engine analysis result */
@@ -78,8 +80,9 @@ export const DEFAULT_ENGINE_CONFIG: EngineConfig = {
   remoteUrl: undefined,
   multipvCount: 3,
   humanization: {
-    enabled: false,
+    enabled: true,
     maxCandidates: 3,
     temperature: 0.8,
   },
+  compressionEnabled: true,
 };
