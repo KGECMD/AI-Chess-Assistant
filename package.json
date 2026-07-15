@@ -1,57 +1,13 @@
 {
   "name": "ai-chess-assistant",
-  "version": "4.0.1",
-  "description": "Chrome extension integrating LC0 chess engine for real-time position analysis, move evaluation, and intelligent suggestions. Built with TypeScript and modern architecture.",
-  "type": "module",
-  "scripts": {
-    "dev": "vite build --watch",
-    "build": "tsc && vite build",
-    "build:zip": "npm run build && cd dist && zip -r ../ai-chess-assistant-lc0.zip ./*",
-    "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "type-check": "tsc --noEmit",
-    "format": "prettier --write \"src/**/*.{ts,tsx,json}\"",
-    "clean": "rimraf dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/KGECMD/AI-Chess-Assistant.git"
-  },
+  "version": "4.0.0",
+  "description": "Chrome extension for real-time chess analysis on chess.com - Pure JavaScript, no build required",
   "author": "KGECMD",
   "license": "MIT",
   "keywords": [
     "chess",
-    "lc0",
     "chrome-extension",
-    "typescript",
-    "ai",
-    "machine-learning",
-    "position-analysis",
-    "chess-engine",
-    "real-time-analysis"
-  ],
-  "bugs": {
-    "url": "https://github.com/KGECMD/AI-Chess-Assistant/issues"
-  },
-  "homepage": "https://github.com/KGECMD/AI-Chess-Assistant#readme",
-  "dependencies": {
-    "pako": "^2.1.0"
-  },
-  "devDependencies": {
-    "@crxjs/vite-plugin": "^2.0.0-beta.25",
-    "@types/chrome": "^0.0.268",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
-    "typescript": "^5.4.0",
-    "vite": "^5.2.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+    "chess-analysis",
+    "javascript"
+  ]
 }
